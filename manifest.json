@@ -1,0 +1,17 @@
+{
+  "name": "工具宝 - 在线工具箱",
+  "short_name": "工具宝",
+  "description": "免费在线工具箱：JSON格式化、Base64编解码、密码生成等15+实用工具",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#1a1a2e",
+  "theme_color": "#1a1a2e",
+  "lang": "zh-CN",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
