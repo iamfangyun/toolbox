@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tools.bmaster.tech/sitemap.xml
+Sitemap: https://tools.bmaster.cn/sitemap.xml
