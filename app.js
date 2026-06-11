@@ -489,11 +489,23 @@ function initRouter() {
     if (window.__TOOL_PAGE__) {
         const slug = window.__TOOL_PAGE__;
         const routeKey = '/' + slug;
+        // 强制设置语言（zh/en 页面各自锁定）
+        if (window.__TOOL_LANG__) {
+            currentLang = window.__TOOL_LANG__;
+            localStorage.setItem('toolbox-lang', currentLang);
+        }
         if (ROUTES[routeKey]) {
             showTool(ROUTES[routeKey].toolId);
         }
+        applyI18n();
         // 工具页不需要 popstate（独立 HTML 文件）
         return;
+    }
+
+    // 处理英文首页
+    if (window.__TOOL_LANG__) {
+        currentLang = window.__TOOL_LANG__;
+        localStorage.setItem('toolbox-lang', currentLang);
     }
 
     // 处理 GitHub Pages 404 重定向：从 sessionStorage 读取原始路径
