@@ -30,7 +30,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="JSON 格式化 - 在线JSON格式化验证工具 | 工具宝">
     <meta property="og:description" content="在线JSON格式化验证工具，支持格式化、压缩和校验JSON数据。">
-    <meta property="og:url" content="https://tools.bmaster.cn/json-format">
+    <meta property="og:url" content="https://tools.bmaster.cn/json-format.html">
     <meta property="og:site_name" content="工具宝">
     <meta property="og:locale" content="zh_CN">
     <meta property="og:locale:alternate" content="en_US">
@@ -69,12 +69,10 @@
     <meta name="google-site-verification" content="F7QqxnlQHXrsgKccryTS_WtjsNAJjPO_hWrfbrlB1VA" />
     <meta name="msvalidate.01" content="3FD3D0FF2E8B01EC85CE5958A5E90B8D" />
     <link rel="stylesheet" href="/style.css">
-
-    <script>
-        // Pre-selected tool for SEO page
-        window.__TOOL_PAGE__ = 'json-format';
-    </script>
-    
+    <link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/json-format.html" />
+    <link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/json-format.html" />
+    <link rel="alternate" hreflang="x-default" href="https://tools.bmaster.cn/json-format.html" />
+    <script>window.__TOOL_PAGE__="json-format";window.__TOOL_LANG__="zh";</script>
 </head>
 <body>
     <!-- 侧边栏 -->
@@ -107,7 +105,7 @@
             </div>
             <div class="nav-group" data-category="dev">
                 <div class="nav-group-title" data-i18n="cat_dev">💻 开发工具</div>
-                <a href="/json-format" class="nav-item" data-tool="json-format" class="nav-item active" data-i18n="tool_json_format">JSON 格式化</a>
+                <a href="/json-format" class="nav-item" data-tool="json-format" data-i18n="tool_json_format">JSON 格式化</a>
                 <a href="/regex-test" class="nav-item" data-tool="regex-test" data-i18n="tool_regex_test">正则表达式测试</a>
                 <a href="/base-convert" class="nav-item" data-tool="base-convert" data-i18n="tool_base_convert">进制转换</a>
                 <a href="/uuid-gen" class="nav-item" data-tool="uuid-gen" data-i18n="tool_uuid_gen">UUID 生成器</a>
@@ -370,7 +368,7 @@
         </div>
 
         <!-- ====== 8. JSON格式化 ====== -->
-        <div class="tool-panel" id="tool-json-format" data-active="true" data-route="json-format">
+        <div class="tool-panel" id="tool-json-format" data-route="json-format">
             <div class="tool-header">
                 <h2 data-i18n="tool_json_format">JSON 格式化</h2>
                 <p class="tool-desc" data-i18n="json_desc">格式化、压缩、验证 JSON 数据</p>
