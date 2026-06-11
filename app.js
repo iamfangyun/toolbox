@@ -348,8 +348,28 @@ function applyI18n() {
     // 更新 html lang 属性
     document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
 
-    // 更新页面标题
-    document.title = lang === 'zh' ? '工具宝 - 在线实用工具箱' : 'ToolBox - Free Online Tools';
+    // 根据当前路由动态更新页面标题和 meta description
+    const currentPath = window.location.pathname || '/';
+    const routeCfg = ROUTES[currentPath];
+    const metaDesc = document.querySelector('meta[name="description"]');
+
+    if (routeCfg) {
+        // 工具页：工具名 - 站名
+        const toolTitle = lang === 'zh' ? routeCfg.titleZh : routeCfg.titleEn;
+        const toolDesc = lang === 'zh' ? routeCfg.descZh : routeCfg.descEn;
+        const siteName = lang === 'zh' ? '工具宝' : 'ToolBox';
+        document.title = `${toolTitle} - ${siteName} | tools.bmaster.cn`;
+        if (metaDesc) metaDesc.setAttribute('content', `${toolDesc}。${lang === 'zh' ? '纯浏览器运行，数据不上传' : 'Pure browser-side, data stays local'}`);
+    } else {
+        // 首页
+        document.title = lang === 'zh' ? '工具宝 - 免费在线工具箱 | tools.bmaster.cn' : 'ToolBox - Free Online Tools | tools.bmaster.cn';
+        if (metaDesc) metaDesc.setAttribute('content', lang === 'zh'
+            ? '免费在线工具箱：JSON格式化、Base64编解码、密码生成、时间戳转换、正则测试等15+实用工具。纯浏览器运行，数据不上传。'
+            : 'Free online toolbox: JSON formatter, Base64 encode/decode, password generator, timestamp converter, regex tester and 15+ tools. Pure browser-side, data stays local.');
+    }
+
+    // 刷新首页卡片文案
+    refreshHomeGrid();
 
     // 所有 data-i18n 元素
     document.querySelectorAll('[data-i18n]').forEach(el => {
@@ -376,25 +396,193 @@ function toggleLang() {
     applyI18n();
 }
 
+// ===== 路由配置 =====
+const ROUTES = {
+    '/word-counter':  { toolId: 'word-counter',  titleZh: '字数统计',            titleEn: 'Word Counter',              descZh: '统计文本的字符数、字数、行数、段落数等',                 descEn: 'Count characters, words, lines, paragraphs and more' },
+    '/case-convert':  { toolId: 'case-convert',  titleZh: '大小写转换',          titleEn: 'Case Converter',            descZh: '英文文本大小写批量转换',                                   descEn: 'Batch convert English text case' },
+    '/text-dedup':    { toolId: 'text-dedup',    titleZh: '文本去重',            titleEn: 'Remove Duplicates',         descZh: '按行去除重复文本，支持忽略空行和排序',                    descEn: 'Remove duplicate lines, with options to ignore blanks and sort' },
+    '/text-replace':  { toolId: 'text-replace',  titleZh: '文本替换',            titleEn: 'Find & Replace',            descZh: '批量查找替换文本，支持正则表达式',                        descEn: 'Batch find and replace, supports regex' },
+    '/base64':        { toolId: 'base64',         titleZh: 'Base64 编解码',      titleEn: 'Base64 Encode/Decode',      descZh: '文本与 Base64 格式互相转换',                              descEn: 'Convert text to/from Base64 format' },
+    '/url-encode':    { toolId: 'url-encode',    titleZh: 'URL 编解码',          titleEn: 'URL Encode/Decode',         descZh: 'URL 特殊字符编码与解码',                                   descEn: 'Encode/decode URL special characters' },
+    '/html-entity':   { toolId: 'html-entity',   titleZh: 'HTML 实体编解码',     titleEn: 'HTML Entity Encode/Decode', descZh: 'HTML 特殊字符与实体名称互转',                              descEn: 'Convert HTML special characters to/from entity names' },
+    '/json-format':   { toolId: 'json-format',   titleZh: 'JSON 格式化',         titleEn: 'JSON Formatter',            descZh: '格式化、压缩、验证 JSON 数据',                            descEn: 'Format, minify and validate JSON data' },
+    '/regex-test':    { toolId: 'regex-test',    titleZh: '正则表达式测试',      titleEn: 'Regex Tester',              descZh: '实时测试正则表达式，高亮匹配结果',                        descEn: 'Test regex patterns with real-time match highlighting' },
+    '/base-convert':  { toolId: 'base-convert',  titleZh: '进制转换',            titleEn: 'Base Converter',            descZh: '二进制/八进制/十进制/十六进制互相转换',                   descEn: 'Convert between binary, octal, decimal and hexadecimal' },
+    '/uuid-gen':      { toolId: 'uuid-gen',      titleZh: 'UUID 生成器',         titleEn: 'UUID Generator',            descZh: '生成随机 UUID (v4)',                                       descEn: 'Generate random UUIDs (v4)' },
+    '/hash-gen':      { toolId: 'hash-gen',      titleZh: 'SHA 哈希生成',        titleEn: 'SHA Hash Generator',        descZh: '使用浏览器原生 CryptoAPI 计算 SHA 哈希值',               descEn: 'Calculate SHA hashes using native browser CryptoAPI' },
+    '/password-gen':  { toolId: 'password-gen',  titleZh: '密码生成器',          titleEn: 'Password Generator',        descZh: '生成高强度随机密码',                                       descEn: 'Generate strong random passwords' },
+    '/timestamp':     { toolId: 'timestamp',     titleZh: '时间戳转换',          titleEn: 'Timestamp Converter',       descZh: 'Unix 时间戳与可读日期互转',                                descEn: 'Convert Unix timestamps to/from readable dates' },
+    '/color-convert': { toolId: 'color-convert', titleZh: '颜色转换',            titleEn: 'Color Converter',           descZh: 'HEX / RGB / HSL 颜色格式互转',                            descEn: 'Convert between HEX / RGB / HSL color formats' },
+};
+
+// 根据 toolId 反查路由路径
+const TOOL_TO_ROUTE = {};
+for (const [path, cfg] of Object.entries(ROUTES)) {
+    TOOL_TO_ROUTE[cfg.toolId] = path;
+}
+
+// 构建首页工具卡片网格
+function buildHomeGrid() {
+    const grid = document.getElementById('home-grid');
+    if (!grid) return;
+
+    if (grid.children.length > 0) {
+        // HTML 中已有 .home-card 元素，只需绑定点击事件
+        grid.querySelectorAll('.home-card').forEach(card => {
+            const href = card.getAttribute('href');
+            if (href) {
+                card.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    navigateTo(href);
+                });
+            }
+        });
+        return;
+    }
+
+    // 动态构建卡片（兜底）
+    for (const [path, cfg] of Object.entries(ROUTES)) {
+        const card = document.createElement('div');
+        card.className = 'tool-card';
+        card.setAttribute('data-route', path);
+        card.innerHTML = `<h3>${currentLang === 'zh' ? cfg.titleZh : cfg.titleEn}</h3><p>${currentLang === 'zh' ? cfg.descZh : cfg.descEn}</p>`;
+        card.addEventListener('click', () => {
+            navigateTo(path);
+        });
+        grid.appendChild(card);
+    }
+}
+
+// 刷新首页卡片文案（语言切换时调用）
+function refreshHomeGrid() {
+    const grid = document.getElementById('home-grid');
+    if (!grid) return;
+
+    // 处理 HTML 预置的 .home-card
+    grid.querySelectorAll('.home-card').forEach(card => {
+        const href = card.getAttribute('href');
+        const cfg = ROUTES[href];
+        if (!cfg) return;
+        const nameEl = card.querySelector('.home-card-name');
+        const descEl = card.querySelector('.home-card-desc');
+        if (nameEl) nameEl.textContent = currentLang === 'zh' ? cfg.titleZh : cfg.titleEn;
+        if (descEl) descEl.textContent = currentLang === 'zh' ? cfg.descZh : cfg.descEn;
+    });
+
+    // 处理动态创建的 .tool-card
+    grid.querySelectorAll('.tool-card').forEach(card => {
+        const path = card.getAttribute('data-route');
+        const cfg = ROUTES[path];
+        if (!cfg) return;
+        card.querySelector('h3').textContent = currentLang === 'zh' ? cfg.titleZh : cfg.titleEn;
+        card.querySelector('p').textContent = currentLang === 'zh' ? cfg.descZh : cfg.descEn;
+    });
+}
+
+// ===== 路由核心 =====
+let routerPushState = true; // 标记：是否需要 pushState（popstate 回调时为 false）
+
+function initRouter() {
+    buildHomeGrid();
+
+    // 处理 GitHub Pages 404 重定向：从 sessionStorage 读取原始路径
+    let path = window.location.pathname;
+    const redirectPath = sessionStorage.getItem('redirect-path');
+    if (redirectPath) {
+        sessionStorage.removeItem('redirect-path');
+        // 仅取 pathname 部分
+        try {
+            const url = new URL(redirectPath, window.location.origin);
+            path = url.pathname;
+        } catch {
+            path = redirectPath.split('?')[0].split('#')[0];
+        }
+        // 用 replaceState 把 URL 修正为原始路径（不刷新页面）
+        if (ROUTES[path]) {
+            history.replaceState({ path }, '', path);
+        }
+    }
+
+    if (path === '/' || path === '') {
+        showHome();
+    } else if (ROUTES[path]) {
+        showTool(ROUTES[path].toolId);
+    } else {
+        // 未知路径，回首页
+        showHome();
+    }
+
+    // 监听浏览器前进/后退
+    window.addEventListener('popstate', () => {
+        routerPushState = false;
+        const p = window.location.pathname;
+        if (p === '/' || p === '') {
+            showHome();
+        } else if (ROUTES[p]) {
+            showTool(ROUTES[p].toolId);
+        } else {
+            showHome();
+        }
+        routerPushState = true;
+        applyI18n(); // 确保 title/description 更新
+    });
+}
+
+function navigateTo(path) {
+    if (path === '/' || path === '') {
+        if (routerPushState) history.pushState({ path: '/' }, '', '/');
+        showHome();
+    } else if (ROUTES[path]) {
+        if (routerPushState) history.pushState({ path }, '', path);
+        showTool(ROUTES[path].toolId);
+    }
+    applyI18n(); // 更新 title 和 meta
+}
+
+function showHome() {
+    // 隐藏所有 tool-panel
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    // 取消侧边栏选中
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    // 显示 home-grid
+    const grid = document.getElementById('home-grid');
+    if (grid) grid.classList.add('active');
+    document.getElementById('sidebar').classList.remove('open');
+}
+
+function showTool(toolId) {
+    // 隐藏 home-grid
+    const grid = document.getElementById('home-grid');
+    if (grid) grid.classList.remove('active');
+    // 隐藏所有 tool-panel，显示目标
+    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
+    const panel = document.getElementById('tool-' + toolId);
+    if (panel) panel.classList.add('active');
+    // 侧边栏高亮
+    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+    const navItem = document.querySelector(`.nav-item[data-tool="${toolId}"]`);
+    if (navItem) navItem.classList.add('active');
+    document.getElementById('sidebar').classList.remove('open');
+}
+
 // ===== 导航切换 =====
 document.querySelectorAll('.nav-item').forEach(item => {
     item.addEventListener('click', (e) => {
         e.preventDefault();
         const toolId = item.dataset.tool;
-        switchTool(toolId);
+        const path = TOOL_TO_ROUTE[toolId] || '/';
+        navigateTo(path);
     });
 });
 
+// 点击网站标题回首页
+document.querySelector('.sidebar-header h1')?.addEventListener('click', () => {
+    navigateTo('/');
+});
+
 function switchTool(toolId) {
-    document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
-    const navItem = document.querySelector(`.nav-item[data-tool="${toolId}"]`);
-    if (navItem) navItem.classList.add('active');
-
-    document.querySelectorAll('.tool-panel').forEach(p => p.classList.remove('active'));
-    const panel = document.getElementById('tool-' + toolId);
-    if (panel) panel.classList.add('active');
-
-    document.getElementById('sidebar').classList.remove('open');
+    const path = TOOL_TO_ROUTE[toolId] || '/';
+    navigateTo(path);
 }
 
 // ===== 搜索工具 =====
@@ -963,3 +1151,6 @@ document.getElementById('color-preview').style.background = '#3498db';
 
 // 应用i18n（从localStorage恢复语言偏好）
 applyI18n();
+
+// 初始化路由
+initRouter();
