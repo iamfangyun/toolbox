@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script>
+        // SPA fallback for GitHub Pages: redirect all 404 paths to index.html
+        // so the client-side router can handle them
+        sessionStorage.setItem('redirect-path', window.location.pathname + window.location.search + window.location.hash);
+        window.location.replace('/');
+    </script>
+</head>
+<body>
+    Redirecting...
+</body>
+</html>
