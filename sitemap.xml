@@ -1,97 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://tools.bmaster.cn/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tools.bmaster.cn/" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tools.bmaster.cn/" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/word-counter.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/word-counter.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/word-counter.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/word-counter.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/case-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/case-convert.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/case-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/case-convert.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/text-dedup.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/text-dedup.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/text-dedup.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/text-dedup.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/text-replace.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/text-replace.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/text-replace.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/text-replace.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/base64.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/base64.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/base64.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/base64.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/url-encode.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/url-encode.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/url-encode.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/url-encode.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/html-entity.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/html-entity.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/html-entity.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/html-entity.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/json-format.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/json-format.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/json-format.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/json-format.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/regex-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/regex-test.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/regex-test.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/regex-test.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/base-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/base-convert.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/base-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/base-convert.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/uuid-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/uuid-gen.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/uuid-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/uuid-gen.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/hash-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/hash-gen.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/hash-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/hash-gen.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/password-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/password-gen.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/password-gen.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/password-gen.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/timestamp.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/timestamp.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/timestamp.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/timestamp.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://tools.bmaster.cn/color-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tools.bmaster.cn/en/color-convert.html" />
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.bmaster.cn/en/color-convert.html</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://tools.bmaster.cn/color-convert.html" />
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
