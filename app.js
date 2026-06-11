@@ -391,8 +391,43 @@ function applyI18n() {
 
 // 切换语言
 function toggleLang() {
-    currentLang = currentLang === 'zh' ? 'en' : 'zh';
-    localStorage.setItem('toolbox-lang', currentLang);
+    const newLang = currentLang === 'zh' ? 'en' : 'zh';
+    localStorage.setItem('toolbox-lang', newLang);
+
+    const path = window.location.pathname;
+
+    // 首页：/ ↔ /en/
+    if (path === '/' || path === '') {
+        window.location.href = newLang === 'en' ? '/en/' : '/';
+        return;
+    }
+    if (path === '/en/' || path === '/en') {
+        window.location.href = newLang === 'zh' ? '/' : '/en/';
+        return;
+    }
+
+    // 独立工具页：/xxx.html ↔ /en/xxx.html
+    const toolMatch = path.match(/^\/([a-z0-9-]+)\.html$/);
+    const enToolMatch = path.match(/^\/en\/([a-z0-9-]+)\.html$/);
+
+    if (toolMatch) {
+        window.location.href = newLang === 'en' ? `/en/${toolMatch[1]}.html` : `/${toolMatch[1]}.html`;
+        return;
+    }
+    if (enToolMatch) {
+        window.location.href = newLang === 'zh' ? `/${enToolMatch[1]}.html` : `/en/${enToolMatch[1]}.html`;
+        return;
+    }
+
+    // SPA 路由（/xxx 无 .html）：跳转到对应语言的 .html 页面
+    const slug = path.replace(/^\//, '').replace(/\/$/, '');
+    if (ROUTES['/' + slug]) {
+        window.location.href = newLang === 'en' ? `/en/${slug}.html` : `/${slug}.html`;
+        return;
+    }
+
+    // 兜底：只切换 UI 语言，不跳转
+    currentLang = newLang;
     applyI18n();
 }
 
