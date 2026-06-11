@@ -485,6 +485,17 @@ let routerPushState = true; // 标记：是否需要 pushState（popstate 回调
 function initRouter() {
     buildHomeGrid();
 
+    // 处理独立工具页（/json-format.html 等预渲染页面）
+    if (window.__TOOL_PAGE__) {
+        const slug = window.__TOOL_PAGE__;
+        const routeKey = '/' + slug;
+        if (ROUTES[routeKey]) {
+            showTool(ROUTES[routeKey].toolId);
+        }
+        // 工具页不需要 popstate（独立 HTML 文件）
+        return;
+    }
+
     // 处理 GitHub Pages 404 重定向：从 sessionStorage 读取原始路径
     let path = window.location.pathname;
     const redirectPath = sessionStorage.getItem('redirect-path');
