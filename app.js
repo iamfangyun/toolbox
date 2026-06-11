@@ -158,6 +158,67 @@ const I18N = {
         // 15. 颜色
         color_desc: 'HEX / RGB / HSL 颜色格式互转',
         color_random: '随机颜色',
+
+        tool_mortgage_calc: '房贷计算器',
+        tool_loan_calc: '贷款计算器',
+        tool_compound_interest: '复利计算器',
+        tool_bmi_calc: 'BMI 计算器',
+        tool_tip_calc: '小费计算器',
+        tool_unit_convert: '单位换算',
+        mortgage_desc: '计算月供、总利息和分期还款计划',
+        mortgage_home_price: '房价（元）',
+        mortgage_down_pct: '首付比例（%）',
+        mortgage_rate: '年利率（%）',
+        mortgage_years: '贷款年限（年）',
+        mortgage_monthly: '月供',
+        mortgage_total: '总还款',
+        mortgage_interest: '总利息',
+        mortgage_down_amount: '首付金额',
+        loan_desc: '计算个人贷款、车贷的月供和总成本',
+        loan_amount: '贷款金额（元）',
+        loan_rate: '年利率（%）',
+        loan_years: '贷款期限（年）',
+        loan_monthly: '月供',
+        loan_total_payment: '总还款',
+        loan_total_interest: '总利息',
+        ci_desc: '计算投资复利增长和预期收益',
+        ci_principal: '初始本金（元）',
+        ci_monthly_add: '每月追加（元）',
+        ci_rate: '年化收益率（%）',
+        ci_years: '投资年限（年）',
+        ci_final: '最终金额',
+        ci_total_deposit: '累计投入',
+        ci_total_earned: '累计收益',
+        bmi_desc: '计算身体质量指数，评估体重健康范围',
+        bmi_unit_system: '单位制',
+        bmi_metric: '公制 (kg/cm)',
+        bmi_imperial: '英制 (lb/ft)',
+        bmi_weight: '体重',
+        bmi_height: '身高',
+        bmi_value: 'BMI',
+        bmi_category: '分类',
+        bmi_healthy: '健康体重范围',
+        bmi_underweight: '偏瘦',
+        bmi_normal: '正常',
+        bmi_overweight: '偏胖',
+        bmi_obese: '肥胖',
+        tip_desc: '快速计算餐厅小费和 AA 分摊金额',
+        tip_bill: '账单金额（$）',
+        tip_percent: '小费比例（%）',
+        tip_split: '分摊人数',
+        tip_amount: '小费',
+        tip_total: '总计',
+        tip_per_person: '每人',
+        unit_desc: '长度、重量、温度等单位互相转换',
+        unit_category: '类别',
+        unit_length: '长度',
+        unit_weight: '重量',
+        unit_temperature: '温度',
+        unit_volume: '体积',
+        unit_speed: '速度',
+        unit_from: '从',
+        unit_to: '到',
+        btn_calculate: '计算',
     },
 
     en: {
@@ -314,6 +375,67 @@ const I18N = {
         // 15. Color
         color_desc: 'Convert between HEX / RGB / HSL color formats',
         color_random: 'Random Color',
+
+        tool_mortgage_calc: 'Mortgage Calculator',
+        tool_loan_calc: 'Loan Calculator',
+        tool_compound_interest: 'Compound Interest Calculator',
+        tool_bmi_calc: 'BMI Calculator',
+        tool_tip_calc: 'Tip Calculator',
+        tool_unit_convert: 'Unit Converter',
+        mortgage_desc: 'Calculate monthly payment, total interest and amortization',
+        mortgage_home_price: 'Home Price ($)',
+        mortgage_down_pct: 'Down Payment (%)',
+        mortgage_rate: 'Annual Interest Rate (%)',
+        mortgage_years: 'Loan Term (years)',
+        mortgage_monthly: 'Monthly Payment',
+        mortgage_total: 'Total Payment',
+        mortgage_interest: 'Total Interest',
+        mortgage_down_amount: 'Down Payment',
+        loan_desc: 'Calculate monthly payment and total cost for personal/auto loans',
+        loan_amount: 'Loan Amount ($)',
+        loan_rate: 'Annual Interest Rate (%)',
+        loan_years: 'Loan Term (years)',
+        loan_monthly: 'Monthly Payment',
+        loan_total_payment: 'Total Payment',
+        loan_total_interest: 'Total Interest',
+        ci_desc: 'Calculate compound interest growth and projected returns',
+        ci_principal: 'Initial Principal ($)',
+        ci_monthly_add: 'Monthly Contribution ($)',
+        ci_rate: 'Annual Return Rate (%)',
+        ci_years: 'Investment Period (years)',
+        ci_final: 'Final Amount',
+        ci_total_deposit: 'Total Deposits',
+        ci_total_earned: 'Total Earnings',
+        bmi_desc: 'Calculate Body Mass Index and healthy weight range',
+        bmi_unit_system: 'Unit System',
+        bmi_metric: 'Metric (kg/cm)',
+        bmi_imperial: 'Imperial (lb/ft)',
+        bmi_weight: 'Weight',
+        bmi_height: 'Height',
+        bmi_value: 'BMI',
+        bmi_category: 'Category',
+        bmi_healthy: 'Healthy Weight Range',
+        bmi_underweight: 'Underweight',
+        bmi_normal: 'Normal',
+        bmi_overweight: 'Overweight',
+        bmi_obese: 'Obese',
+        tip_desc: 'Quickly calculate restaurant tips and split bills',
+        tip_bill: 'Bill Amount ($)',
+        tip_percent: 'Tip Percentage (%)',
+        tip_split: 'Split Between',
+        tip_amount: 'Tip Amount',
+        tip_total: 'Total',
+        tip_per_person: 'Per Person',
+        unit_desc: 'Convert between length, weight, temperature and more',
+        unit_category: 'Category',
+        unit_length: 'Length',
+        unit_weight: 'Weight',
+        unit_temperature: 'Temperature',
+        unit_volume: 'Volume',
+        unit_speed: 'Speed',
+        unit_from: 'From',
+        unit_to: 'To',
+        btn_calculate: 'Calculate',
     }
 };
 
@@ -448,6 +570,12 @@ const ROUTES = {
     '/password-gen':  { toolId: 'password-gen',  titleZh: '密码生成器',          titleEn: 'Password Generator',        descZh: '生成高强度随机密码',                                       descEn: 'Generate strong random passwords' },
     '/timestamp':     { toolId: 'timestamp',     titleZh: '时间戳转换',          titleEn: 'Timestamp Converter',       descZh: 'Unix 时间戳与可读日期互转',                                descEn: 'Convert Unix timestamps to/from readable dates' },
     '/color-convert': { toolId: 'color-convert', titleZh: '颜色转换',            titleEn: 'Color Converter',           descZh: 'HEX / RGB / HSL 颜色格式互转',                            descEn: 'Convert between HEX / RGB / HSL color formats' },
+    '/mortgage-calc':    { toolId: 'mortgage-calc',    titleZh: '房贷计算器',      titleEn: 'Mortgage Calculator',         descZh: '计算月供、总利息和分期还款计划',         descEn: 'Calculate monthly payment, total interest and amortization' },
+    '/loan-calc':        { toolId: 'loan-calc',        titleZh: '贷款计算器',      titleEn: 'Loan Calculator',             descZh: '计算个人贷款、车贷的月供和总成本',      descEn: 'Calculate monthly payment and total cost for loans' },
+    '/compound-interest':{ toolId: 'compound-interest',titleZh: '复利计算器',      titleEn: 'Compound Interest Calculator', descZh: '计算投资复利增长和预期收益',            descEn: 'Calculate compound interest growth and projected returns' },
+    '/bmi-calc':         { toolId: 'bmi-calc',         titleZh: 'BMI 计算器',      titleEn: 'BMI Calculator',              descZh: '计算身体质量指数，评估体重健康范围',    descEn: 'Calculate Body Mass Index and healthy weight range' },
+    '/tip-calc':         { toolId: 'tip-calc',         titleZh: '小费计算器',      titleEn: 'Tip Calculator',              descZh: '快速计算餐厅小费和 AA 分摊金额',       descEn: 'Quickly calculate restaurant tips and split bills' },
+    '/unit-convert':     { toolId: 'unit-convert',     titleZh: '单位换算',        titleEn: 'Unit Converter',              descZh: '长度、重量、温度等单位互相转换',       descEn: 'Convert between length, weight, temperature and more' },
 };
 
 // 根据 toolId 反查路由路径
@@ -1212,3 +1340,235 @@ applyI18n();
 
 // 初始化路由
 initRouter();
+
+// ====== 房贷计算器 ======
+function calcMortgage() {
+    const price = parseFloat(document.getElementById('mortgage-price').value);
+    const downPct = parseFloat(document.getElementById('mortgage-down').value);
+    const rate = parseFloat(document.getElementById('mortgage-rate').value);
+    const years = parseInt(document.getElementById('mortgage-years').value);
+    
+    const down = price * downPct / 100;
+    const principal = price - down;
+    const monthlyRate = rate / 100 / 12;
+    const n = years * 12;
+    
+    let monthly, total, interest;
+    if (monthlyRate === 0) {
+        monthly = principal / n;
+        total = principal;
+        interest = 0;
+    } else {
+        monthly = principal * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+        total = monthly * n;
+        interest = total - principal;
+    }
+    
+    const currency = currentLang === 'zh' ? '¥' : '$';
+    const fmt = n => currency + n.toLocaleString(currentLang === 'zh' ? 'zh-CN' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    document.getElementById('mortgage-monthly').textContent = fmt(monthly);
+    document.getElementById('mortgage-total').textContent = fmt(total);
+    document.getElementById('mortgage-interest').textContent = fmt(interest);
+    document.getElementById('mortgage-down-amount').textContent = fmt(down);
+    document.getElementById('mortgage-result').style.display = 'block';
+}
+
+// ====== 贷款计算器 ======
+function calcLoan() {
+    const amount = parseFloat(document.getElementById('loan-amount').value);
+    const rate = parseFloat(document.getElementById('loan-rate').value);
+    const years = parseInt(document.getElementById('loan-years').value);
+    
+    const monthlyRate = rate / 100 / 12;
+    const n = years * 12;
+    
+    let monthly, total, interest;
+    if (monthlyRate === 0) {
+        monthly = amount / n;
+        total = amount;
+        interest = 0;
+    } else {
+        monthly = amount * (monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+        total = monthly * n;
+        interest = total - amount;
+    }
+    
+    const currency = currentLang === 'zh' ? '¥' : '$';
+    const fmt = n => currency + n.toLocaleString(currentLang === 'zh' ? 'zh-CN' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    document.getElementById('loan-monthly').textContent = fmt(monthly);
+    document.getElementById('loan-total-payment').textContent = fmt(total);
+    document.getElementById('loan-total-interest').textContent = fmt(interest);
+    document.getElementById('loan-result').style.display = 'block';
+}
+
+// ====== 复利计算器 ======
+function calcCompound() {
+    const principal = parseFloat(document.getElementById('ci-principal').value);
+    const monthly = parseFloat(document.getElementById('ci-monthly').value) || 0;
+    const rate = parseFloat(document.getElementById('ci-rate').value);
+    const years = parseInt(document.getElementById('ci-years').value);
+    
+    const monthlyRate = rate / 100 / 12;
+    const n = years * 12;
+    const totalDeposit = principal + monthly * n;
+    
+    let finalAmount;
+    if (monthlyRate === 0) {
+        finalAmount = totalDeposit;
+    } else {
+        finalAmount = principal * Math.pow(1 + monthlyRate, n) + monthly * (Math.pow(1 + monthlyRate, n) - 1) / monthlyRate;
+    }
+    const earned = finalAmount - totalDeposit;
+    
+    const currency = currentLang === 'zh' ? '¥' : '$';
+    const fmt = n => currency + n.toLocaleString(currentLang === 'zh' ? 'zh-CN' : 'en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    
+    document.getElementById('ci-final').textContent = fmt(finalAmount);
+    document.getElementById('ci-deposit').textContent = fmt(totalDeposit);
+    document.getElementById('ci-earned').textContent = fmt(earned);
+    document.getElementById('ci-result').style.display = 'block';
+}
+
+// ====== BMI 计算器 ======
+function toggleBmiUnit() {
+    const unit = document.getElementById('bmi-unit').value;
+    document.getElementById('bmi-weight-unit').textContent = unit === 'metric' ? 'kg' : 'lb';
+    document.getElementById('bmi-height-unit').textContent = unit === 'metric' ? 'cm' : 'ft';
+    if (unit === 'metric') {
+        document.getElementById('bmi-weight').value = 70;
+        document.getElementById('bmi-height').value = 170;
+    } else {
+        document.getElementById('bmi-weight').value = 154;
+        document.getElementById('bmi-height').value = 5.7;
+    }
+}
+
+function calcBMI() {
+    const unit = document.getElementById('bmi-unit').value;
+    let weight = parseFloat(document.getElementById('bmi-weight').value);
+    let height = parseFloat(document.getElementById('bmi-height').value);
+    
+    if (unit === 'imperial') {
+        weight *= 0.453592;
+        height *= 30.48;
+    }
+    height = height / 100;
+    const bmi = weight / (height * height);
+    
+    let category;
+    if (bmi < 18.5) category = t('bmi_underweight');
+    else if (bmi < 25) category = t('bmi_normal');
+    else if (bmi < 30) category = t('bmi_overweight');
+    else category = t('bmi_obese');
+    
+    const unitLabel = document.getElementById('bmi-unit').value === 'metric' ? 'kg' : 'lb';
+    const hUnit = document.getElementById('bmi-unit').value === 'metric' ? 'cm' : 'ft';
+    const minW = (18.5 * height * height).toFixed(1);
+    const maxW = (24.9 * height * height).toFixed(1);
+    
+    document.getElementById('bmi-value').textContent = bmi.toFixed(1);
+    document.getElementById('bmi-category').textContent = category;
+    document.getElementById('bmi-healthy').textContent = minW + ' - ' + maxW + ' kg';
+    document.getElementById('bmi-result').style.display = 'block';
+}
+
+// ====== 小费计算器 ======
+function setTip(pct) {
+    document.getElementById('tip-pct').value = pct;
+    calcTip();
+}
+
+function calcTip() {
+    const bill = parseFloat(document.getElementById('tip-bill').value);
+    const pct = parseFloat(document.getElementById('tip-pct').value);
+    const split = parseInt(document.getElementById('tip-split').value) || 1;
+    
+    const tip = bill * pct / 100;
+    const total = bill + tip;
+    const perPerson = total / split;
+    
+    const fmt = n => '$' + n.toFixed(2);
+    document.getElementById('tip-amount').textContent = fmt(tip);
+    document.getElementById('tip-total').textContent = fmt(total);
+    document.getElementById('tip-per-person').textContent = fmt(perPerson);
+    document.getElementById('tip-result').style.display = 'block';
+}
+
+// ====== 单位换算 ======
+const UNIT_DATA = {
+    length: {
+        units: ['mm', 'cm', 'm', 'km', 'in', 'ft', 'yd', 'mi'],
+        names: { mm: 'Millimeter', cm: 'Centimeter', m: 'Meter', km: 'Kilometer', in: 'Inch', ft: 'Foot', yd: 'Yard', mi: 'Mile' },
+        toBase: { mm: 0.001, cm: 0.01, m: 1, km: 1000, in: 0.0254, ft: 0.3048, yd: 0.9144, mi: 1609.344 }
+    },
+    weight: {
+        units: ['mg', 'g', 'kg', 'oz', 'lb', 't'],
+        names: { mg: 'Milligram', g: 'Gram', kg: 'Kilogram', oz: 'Ounce', lb: 'Pound', t: 'Metric Ton' },
+        toBase: { mg: 0.001, g: 1, kg: 1000, oz: 28.3495, lb: 453.592, t: 1000000 }
+    },
+    temperature: {
+        units: ['C', 'F', 'K'],
+        names: { C: 'Celsius', F: 'Fahrenheit', K: 'Kelvin' },
+        special: true
+    },
+    volume: {
+        units: ['ml', 'L', 'gal', 'qt', 'pt', 'cup', 'floz'],
+        names: { ml: 'Milliliter', L: 'Liter', gal: 'Gallon', qt: 'Quart', pt: 'Pint', cup: 'Cup', floz: 'Fluid Ounce' },
+        toBase: { ml: 0.001, L: 1, gal: 3.78541, qt: 0.946353, pt: 0.473176, cup: 0.236588, floz: 0.0295735 }
+    },
+    speed: {
+        units: ['ms', 'kmh', 'mph', 'kn'],
+        names: { ms: 'm/s', kmh: 'km/h', mph: 'mph', kn: 'knot' },
+        toBase: { ms: 1, kmh: 0.277778, mph: 0.44704, kn: 0.514444 }
+    }
+};
+
+function updateUnitOptions() {
+    const cat = document.getElementById('unit-category').value;
+    const data = UNIT_DATA[cat];
+    const fromSel = document.getElementById('unit-from');
+    const toSel = document.getElementById('unit-to');
+    
+    fromSel.innerHTML = '';
+    toSel.innerHTML = '';
+    
+    data.units.forEach(u => {
+        fromSel.innerHTML += `<option value="${u}">${data.names[u]}</option>`;
+        toSel.innerHTML += `<option value="${u}">${data.names[u]}</option>`;
+    });
+    
+    if (data.units.length > 1) toSel.selectedIndex = 1;
+    convertUnit();
+}
+
+function convertUnit() {
+    const cat = document.getElementById('unit-category').value;
+    const data = UNIT_DATA[cat];
+    const fromUnit = document.getElementById('unit-from').value;
+    const toUnit = document.getElementById('unit-to').value;
+    const fromVal = parseFloat(document.getElementById('unit-from-val').value);
+    
+    if (isNaN(fromVal)) { document.getElementById('unit-to-val').value = ''; return; }
+    
+    let result;
+    if (cat === 'temperature') {
+        let celsius;
+        if (fromUnit === 'C') celsius = fromVal;
+        else if (fromUnit === 'F') celsius = (fromVal - 32) * 5 / 9;
+        else celsius = fromVal - 273.15;
+        
+        if (toUnit === 'C') result = celsius;
+        else if (toUnit === 'F') result = celsius * 9 / 5 + 32;
+        else result = celsius + 273.15;
+    } else {
+        const baseVal = fromVal * data.toBase[fromUnit];
+        result = baseVal / data.toBase[toUnit];
+    }
+    
+    document.getElementById('unit-to-val').value = parseFloat(result.toPrecision(10));
+}
+
+// Init unit converter on load
+updateUnitOptions();
